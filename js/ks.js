@@ -26,8 +26,9 @@ const knapSack = (item, capacity) => {
 	// Set result to 0 if item or capacity equal 0.
 	// Item is -1?, meaning we went through all items
 	// Capacity is 0?, meaning knapsack cannot take in more weight.
-
 	if (item === -1 || capacity === 0) result = 0;
+	// When item is too heavy to put in ks, move on to next item.
+	else if (weight[item] > capacity) knapsack(item - 1, capacity);
 
 
 
