@@ -27,11 +27,22 @@ const knapSack = (item, capacity) => {
 	// Item is -1?, meaning we went through all items
 	// Capacity is 0?, meaning knapsack cannot take in more weight.
 	if (item === -1 || capacity === 0) result = 0;
+
 	// When item is too heavy to put in ks, move on to next item.
 	else if (weight[item] > capacity) knapsack(item - 1, capacity);
 
+	// Compare the values of moving on to the next item and putting the item in ks.
+	// Set result equal to greatest value
+	else {
+		// Value of next item
+		const moveOn = knapsack(item - 1, capacity);
+														// Since we put item in ks, subtract weight of item from cap.
+		// Value of item in bag + value of next item   // To Find Remaining Capacity
+		const putIn = value[item] + knapsack(item - 1, capacity - weight[item]);
 
+		const result = Math.max(moveOn, putIn);
 
+	}
 }
 
 
