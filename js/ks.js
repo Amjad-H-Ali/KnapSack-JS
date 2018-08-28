@@ -19,7 +19,7 @@ for (let i = 0; i < capacity; i ++)
 
 				// Current Item index and Capacity
 const knapSack = (item, capacity) => {
-
+	let result;
 	// If value was found before, return it. No need to find it again.
 	if (results[item][capacity]) return results[item][capacity];
 
@@ -40,9 +40,13 @@ const knapSack = (item, capacity) => {
 		// Value of item in bag + value of next item   // To Find Remaining Capacity
 		const putIn = value[item] + knapsack(item - 1, capacity - weight[item]);
 
-		const result = Math.max(moveOn, putIn);
+		// Compare bothe values and return the greatest.
+		result = Math.max(moveOn, putIn);
 
 	}
+	// Before returning, store result in array to prevent redundancy.
+	results[index][capacity] = result;
+	return result;
 }
 
 
