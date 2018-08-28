@@ -17,7 +17,10 @@ for (let i = 0; i < capacity; i ++)
 
 	results.push([]);
 
-console.log(results);
+
+const knapSack = (item, capacity) => {
+	
+}
 
 
 
