@@ -24,10 +24,10 @@ const knapSack = (item, capacity) => {
 	if (results[item][capacity]) return results[item][capacity];
 
 	// Set result to 0 if item or capacity equal 0.
-	// Item is 0?, meaning we went through all items
+	// Item is -1?, meaning we went through all items
 	// Capacity is 0?, meaning knapsack cannot take in more weight.
 
-	if (item === 0 || capacity === 0) result = 0;
+	if (item === -1 || capacity === 0) result = 0;
 
 
 
