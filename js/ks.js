@@ -17,9 +17,14 @@ for (let i = 0; i < capacity; i ++)
 
 	results.push([]);
 
-
+				// Current Item index and Capacity
 const knapSack = (item, capacity) => {
-	
+
+	// If value was found before, return it. No need to find it again.
+	if (results[item][capacity]) return results[item][capacity];
+
+
+
 }
 
 
